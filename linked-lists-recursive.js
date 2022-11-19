@@ -76,3 +76,7 @@ LinkedList.prototype.toString = function (head = this.head) {
   if (head === null) return null;
   return `( ${head.value} ) -> ${this.toString(head.nextNode)}`;
 };
+
+module.exports = {
+  LinkedList,
+};
