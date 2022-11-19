@@ -1,4 +1,3 @@
-//  Node: building blocks of a linked list
 const LinkedListIterative = require("./linked-lists-iterative");
 const LinkedListRecursive = require("./linked-lists-recursive");
 const log = require("./logging");
@@ -9,7 +8,7 @@ console.log("odin project assignment #14\nlinked lists [bmilcs]\n");
 // iterative linked list
 //
 
-console.error(
+console.log(
   "- - - - - - - - - - - - - -\niterative method tests\n- - - - - - - - - - - - - -"
 );
 
@@ -106,7 +105,7 @@ log.listAfterMethod(myIterativeList);
 // recursive linked lists
 //
 
-console.error(
+console.log(
   "\n- - - - - - - - - - - - - -\nrecursive method tests\n- - - - - - - - - - - - - -"
 );
 
