@@ -1,12 +1,17 @@
 //  Node: building blocks of a linked list
 const LinkedListIterative = require("./linked-lists-iterative");
-const LinkedListRecursive = require("./linked-lists-iterative");
+const LinkedListRecursive = require("./linked-lists-recursive");
 const log = require("./logging");
-//
-// Test Data
-//
 
 console.log("odin project assignment #14\nlinked lists [bmilcs]\n");
+
+//
+// iterative linked list
+//
+
+console.error(
+  "- - - - - - - - - - - - - -\niterative method tests\n- - - - - - - - - - - - - -"
+);
 
 const myIterativeList = new LinkedListIterative();
 
@@ -19,7 +24,7 @@ myIterativeList.append("A");
 myIterativeList.append("B");
 myIterativeList.append("C");
 myIterativeList.append("D");
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 // prepend()
 log.methodDescription(
@@ -27,7 +32,7 @@ log.methodDescription(
   myIterativeList
 );
 myIterativeList.prepend("0");
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 // size()
 log.methodDescription(
@@ -53,7 +58,7 @@ log.methodDescription(
   myIterativeList
 );
 myIterativeList.pop();
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 // contains()
 log.methodDescription(
@@ -78,7 +83,7 @@ log.methodDescription(
 );
 console.log("- insert HI at index 2");
 myIterativeList.insertAt("HI", 2);
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 // removeAt()
 log.methodDescription(
@@ -87,7 +92,7 @@ log.methodDescription(
 );
 console.log("- remove index 2");
 myIterativeList.removeAt(2);
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 // reverse()
 log.methodDescription(
@@ -95,11 +100,15 @@ log.methodDescription(
   myIterativeList
 );
 myIterativeList.reverse();
-log.methodEffects(myIterativeList);
+log.listAfterMethod(myIterativeList);
 
 //
 // recursive linked lists
 //
+
+console.error(
+  "\n- - - - - - - - - - - - - -\nrecursive method tests\n- - - - - - - - - - - - - -"
+);
 
 const myRecursiveList = new LinkedListRecursive();
 
@@ -112,7 +121,7 @@ myRecursiveList.append("A");
 myRecursiveList.append("B");
 myRecursiveList.append("C");
 myRecursiveList.append("D");
-log.methodEffects(myRecursiveList);
+log.listAfterMethod(myRecursiveList);
 
 // prepend()
 log.methodDescription(
@@ -120,7 +129,7 @@ log.methodDescription(
   myRecursiveList
 );
 myRecursiveList.prepend("0");
-log.methodEffects(myRecursiveList);
+log.listAfterMethod(myRecursiveList);
 
 // size()
 log.methodDescription(
@@ -146,7 +155,7 @@ log.methodDescription(
   myRecursiveList
 );
 myRecursiveList.pop();
-log.methodEffects(myRecursiveList);
+log.listAfterMethod(myRecursiveList);
 
 // contains()
 log.methodDescription(

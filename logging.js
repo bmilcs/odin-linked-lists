@@ -7,7 +7,7 @@ const methodDescription = (string, linkedList) => {
   console.log(`- before: ${linkedList.toString()}`);
 };
 
-const methodEffects = (linkedList) => {
+const listAfterMethod = (linkedList) => {
   console.log(`- after:  ${linkedList.toString()}`);
 };
 
@@ -17,6 +17,6 @@ const methodReturnVal = (description, callback) => {
 
 module.exports = {
   methodDescription,
-  methodEffects,
+  listAfterMethod,
   methodReturnVal,
 };
