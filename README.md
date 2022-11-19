@@ -3,8 +3,21 @@
 Welcome to Bryan Miller's Recursion Project, the [fourteenth assignment](https://www.theodinproject.com/lessons/javascript-linked-lists) within the Odin Project curriculum. The goal of this repo is to practice the following skill sets:
 
 - Vanilla JavaScript
-- Computer Science
-- Linked Lists Data Structure
+- Computer Science Data Structures
+  - Linked Lists
+    - `prepend()`
+    - `append()`
+    - `size()`
+    - `head()`
+    - `tail()`
+    - `at()`
+    - `pop()`
+    - `contains()`
+    - `find()`
+    - `toString()`
+    - `insertAt()`
+    - `removeAt()`
+    - `reverse()` \* for fun
 
 ## Summary
 
@@ -19,4 +32,7 @@ Welcome to Bryan Miller's Recursion Project, the [fourteenth assignment](https:/
 ```sh
 # clone repo
 git clone https://github.com/bmilcs/odin-linked-lists
+
+# run script
+node index.js
 ```

@@ -1,13 +1,8 @@
-//  Node: building blocks of a linked list
-class Node {
-  constructor(value = null, nextNode = null) {
-    this.value = value;
-    this.nextNode = nextNode;
-  }
-}
+// Node: building blocks of a linked list
+const Node = require("./node.js");
 
-//  LinkedList: full list
-class LinkedList {
+//  Linked List: Iterative using Classes
+module.exports = class LinkedList {
   constructor() {
     this.head = null;
   }
@@ -179,98 +174,4 @@ class LinkedList {
     // finally, update list's head node
     this.head = prevNode;
   }
-}
-
-//
-// Console Logging Functions
-//
-
-const logMethodDescription = (string, linkedList) => {
-  console.warn(`\n# ${string}`);
-  console.log(`- before: ${linkedList.toString()}`);
 };
-
-const logMethodEffects = (linkedList) => {
-  console.log(`- after:  ${linkedList.toString()}`);
-};
-
-const logMethodReturnVal = (description, callback) => {
-  console.log(`- ${description}: ${callback}`);
-};
-
-//
-// Test Data
-//
-
-console.log("odin project assignment #14\nlinked lists [bmilcs]");
-
-const myList = new LinkedList();
-
-// append()
-logMethodDescription(".append(): add node to the end of a linked list", myList);
-myList.append("A");
-myList.append("B");
-myList.append("C");
-myList.append("D");
-logMethodEffects(myList);
-
-// prepend()
-logMethodDescription(
-  ".prepend(): add node to the beginning of a linked list",
-  myList
-);
-myList.prepend("0");
-logMethodEffects(myList);
-
-// size()
-logMethodDescription(
-  ".size(): return total size of linked list (length)",
-  myList
-);
-logMethodReturnVal("size", myList.size());
-
-// tail()
-logMethodDescription(".tail(): return last node of a linked list", myList);
-logMethodReturnVal("tail", myList.tail().value);
-
-// at()
-logMethodDescription(".at(): return node at given index", myList);
-logMethodReturnVal("[2]", myList.at(2).value);
-
-// pop()
-logMethodDescription(".pop(): remove the last node in a linked list", myList);
-myList.pop();
-logMethodEffects(myList);
-
-// contains()
-logMethodDescription(
-  ".contains(): return true if linked list contains a value",
-  myList
-);
-logMethodReturnVal("contains B", myList.contains("B"));
-logMethodReturnVal("contains G", myList.contains("G"));
-
-// find()
-logMethodDescription(
-  ".find(): find a value in a linked list & return the index",
-  myList
-);
-logMethodReturnVal("find A", myList.find("A"));
-logMethodReturnVal("find T", myList.find("T"));
-
-// insertAt()
-logMethodDescription(".insertAt(): insert new node at a given index", myList);
-console.log("- insert HI at index 2");
-myList.insertAt("HI", 2);
-logMethodEffects(myList);
-
-// removeAt()
-logMethodDescription(".removeAt(): remove node at a given index", myList);
-console.log("- remove index 2");
-myList.removeAt(2);
-logMethodEffects(myList);
-
-// reverse()
-logMethodDescription(".reverse(): reverse order of a linked list", myList);
-myList.reverse();
-logMethodEffects(myList);
