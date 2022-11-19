@@ -153,22 +153,48 @@ class LinkedList {
     const nextNode = currentNode.nextNode;
     previousNode.nextNode = nextNode;
   }
+
+  //
+  // bonus!
+  //
+
+  // reverse the order of a linked list
+  reverse() {
+    let current = this.head;
+    let nextBackup = null;
+    let prevNode = null;
+
+    while (current !== null) {
+      // backup original nextNode
+      nextBackup = current.nextNode;
+
+      // sever next, change next to previous element
+      current.nextNode = prevNode;
+
+      // prepare for next iteration
+      prevNode = current;
+      current = nextBackup;
+    }
+
+    // finally, update list's head node
+    this.head = prevNode;
+  }
 }
 
 //
 // Console Logging Functions
 //
 
-const logBefore = (string, linkedList) => {
+const logMethodDescription = (string, linkedList) => {
   console.warn(`\n# ${string}`);
   console.log(`- before: ${linkedList.toString()}`);
 };
 
-const logAfter = (linkedList) => {
+const logMethodEffects = (linkedList) => {
   console.log(`- after:  ${linkedList.toString()}`);
 };
 
-const logValue = (description, callback) => {
+const logMethodReturnVal = (description, callback) => {
   console.log(`- ${description}: ${callback}`);
 };
 
@@ -176,48 +202,75 @@ const logValue = (description, callback) => {
 // Test Data
 //
 
-console.log("odin project assignment #14\nlinked lists\n");
+console.log("odin project assignment #14\nlinked lists [bmilcs]");
 
 const myList = new LinkedList();
 
-logBefore(".append(): add node to the end of a linked list", myList);
+// append()
+logMethodDescription(".append(): add node to the end of a linked list", myList);
 myList.append("A");
 myList.append("B");
 myList.append("C");
 myList.append("D");
-logAfter(myList);
+logMethodEffects(myList);
 
-logBefore(".prepend(): add node to the beginning of a linked list", myList);
+// prepend()
+logMethodDescription(
+  ".prepend(): add node to the beginning of a linked list",
+  myList
+);
 myList.prepend("0");
-logAfter(myList);
+logMethodEffects(myList);
 
-logBefore(".size(): return total size of linked list (length)", myList);
-logValue("size", myList.size());
+// size()
+logMethodDescription(
+  ".size(): return total size of linked list (length)",
+  myList
+);
+logMethodReturnVal("size", myList.size());
 
-logBefore(".tail(): return last node of a linked list", myList);
-logValue("tail", myList.tail().value);
+// tail()
+logMethodDescription(".tail(): return last node of a linked list", myList);
+logMethodReturnVal("tail", myList.tail().value);
 
-logBefore(".at(): return node at given index", myList);
-logValue("[2]", myList.at(2).value);
+// at()
+logMethodDescription(".at(): return node at given index", myList);
+logMethodReturnVal("[2]", myList.at(2).value);
 
-logBefore(".pop(): remove the last node in a linked list", myList);
+// pop()
+logMethodDescription(".pop(): remove the last node in a linked list", myList);
 myList.pop();
-logAfter(myList);
+logMethodEffects(myList);
 
-logBefore(".contains(): return true if linked list contains a value", myList);
-logValue("contains B", myList.contains("B"));
-logValue("contains G", myList.contains("G"));
+// contains()
+logMethodDescription(
+  ".contains(): return true if linked list contains a value",
+  myList
+);
+logMethodReturnVal("contains B", myList.contains("B"));
+logMethodReturnVal("contains G", myList.contains("G"));
 
-logBefore(".find(): find a value in a linked list & return the index", myList);
-logValue("find A", myList.find("A"));
-logValue("find T", myList.find("T"));
+// find()
+logMethodDescription(
+  ".find(): find a value in a linked list & return the index",
+  myList
+);
+logMethodReturnVal("find A", myList.find("A"));
+logMethodReturnVal("find T", myList.find("T"));
 
-logBefore(".insertAt(): insert new node at a given index", myList);
-console.log("- HI at index 2");
+// insertAt()
+logMethodDescription(".insertAt(): insert new node at a given index", myList);
+console.log("- insert HI at index 2");
 myList.insertAt("HI", 2);
-logAfter(myList);
+logMethodEffects(myList);
 
-logBefore(".removeAt(): remove node at a given index", myList);
-console.log("- index 2");
+// removeAt()
+logMethodDescription(".removeAt(): remove node at a given index", myList);
+console.log("- remove index 2");
 myList.removeAt(2);
-logAfter(myList);
+logMethodEffects(myList);
+
+// reverse()
+logMethodDescription(".reverse(): reverse order of a linked list", myList);
+myList.reverse();
+logMethodEffects(myList);
