@@ -2,7 +2,7 @@ const LinkedListIterative = require("./linked-lists-iterative");
 const LinkedListRecursive = require("./linked-lists-recursive");
 const log = require("./logging");
 
-console.log("odin project assignment #14\nlinked lists [bmilcs]\n");
+console.log("\nodin project assignment #14\nlinked lists [bmilcs]\n");
 
 //
 // iterative linked list
